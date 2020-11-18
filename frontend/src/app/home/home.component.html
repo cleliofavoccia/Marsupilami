@@ -1,0 +1,56 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Marsupios List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let marsupilami of marsupios; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveMarsupilami(marsupilami, i)"
+      >
+        {{ marsupilami.login }}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentMarsupilami">
+      <h4>Marsupilami</h4>
+      <div>
+        <label><strong>Login:</strong></label>
+        {{ currentMarsupilami.login }}
+      </div>
+      <div>
+        <label><strong>Age:</strong></label>
+        {{ currentMarsupilami.age }}
+      </div>
+      <div>
+        <label><strong>Family:</strong></label>
+        {{ currentMarsupilami.family }}
+      </div>
+      <div>
+        <label><strong>Race:</strong></label>
+        {{ currentMarsupilami.race }}
+      </div>
+      <div>
+        <label><strong>Food:</strong></label>
+        {{ currentMarsupilami.food }}
+      </div>
+      <div *ngIf="currentUser">
+        <button
+          type="submit"
+          class="badge badge-success"
+          (click)="addToFriend()"
+        >
+          Add Friend
+        </button>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="!currentMarsupilami">
+      <br />
+      <p>Please choose a Marsupilami</p>
+    </div>
+  </div>
+</div>
