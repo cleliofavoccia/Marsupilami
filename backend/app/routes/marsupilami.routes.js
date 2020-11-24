@@ -12,6 +12,9 @@ module.exports = app => {
   // Ouvre une URL pour :  Retourne un unique Marsu selon un id donné
   router.get("/:id", marsupios.findOne);
 
+  // Ouvre une URL pour :  Retourne un unique Marsu selon un login donné
+  router.get("/login/:login", marsupios.findOneByLogin);
+
   // Ouvre une URL pour :  Met à jour un Marsu de l'id donné
   router.put("/:id", marsupios.update);
 

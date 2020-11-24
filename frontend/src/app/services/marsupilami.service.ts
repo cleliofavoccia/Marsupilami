@@ -22,6 +22,10 @@ export class MarsupilamiService {
       return this.http.get(`${baseUrl}/${id}`);
     }
 
+    getByLogin(login: any): Observable<any> {
+       return this.http.get(`${baseUrl}/login/${login}`);
+    }
+
     update(id: any, data: any): Observable<any> {
       return this.http.put(`${baseUrl}/${id}`, data);
     }
