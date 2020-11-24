@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NewfriendoffComponent } from './newfriendoff/newfriendoff.component';
 
 import {authInterceptorProviders} from '../helpers/auth.interceptor';
 
@@ -20,7 +21,8 @@ import {authInterceptorProviders} from '../helpers/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewfriendoffComponent
   ],
   imports: [
     BrowserModule,

@@ -65,6 +65,23 @@ exports.findOne = (req, res) => {
     });
 };
 
+// Renvoi un Marsupilami selon un login donné
+exports.findOneByLogin = (req, res) => {
+  const loginP = req.params.login;
+
+  Marsupilami.find({ login: loginP })
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found Marsupilami with login " + loginP });
+      else res.send(data);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Marsupilami with login=" + loginP });
+    });
+};
+
 // Met à jour un Marsupilami en base
 exports.update = (req, res) => {
   // On s'assure que la demande contient bien des éléments à mettre à jour
